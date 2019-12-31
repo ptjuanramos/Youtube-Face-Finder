@@ -1,0 +1,4 @@
+video_chunks/
+__pycached__
+*.pyc
+.vs

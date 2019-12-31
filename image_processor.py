@@ -4,14 +4,14 @@ from os import path
 import face_recognition
 import image_processor_models
 
-authorized_extensions = [".jpg"] #TODO use this in the validation
+authorized_extensions = [".jpg"] #For now only jpg
 
 """
 Check if image is .jpg extension(for now)
 """
 def is_authorized_image_file(image_path):
     filename, file_extension = path.splitext(image_path)
-    return file_extension == ".jpg" #For now is only jpg
+    return file_extension in authorized_extensions
 
 """
 Reads image from the given path
@@ -29,7 +29,6 @@ def read_image(image_path):
     return image_processor_models.ImageWrapper(image_path, image_content)
 
 """
-TODO - to be removed since that we are going to create a youtube stream over the video
 Reads multiple images from the given directory path.
 Uses read_image(...)
 """
